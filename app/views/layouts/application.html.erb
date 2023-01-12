@@ -9,13 +9,14 @@
        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
   </head>
 
-  <body class="d-flex flex-column vh-100">
+<body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
-      <nav class="navbar navbar-expand-lg navbar-light">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div class="container">
-          <a class="navbar-brand p-3" href="/"><stong>Bookers</stong></a>
+          <a class="navbar-brand p-1" href="/"><stong>Bookers</stong></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,17 +39,25 @@
               <%= link_to "Log out", destroy_user_session_path,  method: :delete,class: 'nav-link text-dark' %>
             </li>
             <% else %>
-            <a class="nav-item">
-              <%= link_to "Home", href='/',  class: 'nav-link text-dark' %>
-            </a>
-            <a class="nav-item">
-              <%= link_to "About",'home/about', class: 'nav-link text-dark' %>
-            </a>
-            <li class="nav-item">
-              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-dark' %>
+            <li class="">
+              <%= link_to root_path, class:"btn btn-link" do %>
+              <i class="bi bi-house-fill">Home</i>
+              <% end %>
             </li>
-            <li class="nav-item">
-              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-dark' %>
+            <li class="">
+              <%= link_to home_about_path, class:"btn btn-link" do %>
+              <i class="bi bi-link-45deg">About</i>
+              <% end %>
+            </li>
+            <li class="">
+              <%= link_to new_user_registration_path, class:"btn btn-link" do %>
+              <i class="bi bi-person-plus">Sign up</i>
+              <% end %>
+            </li>
+            <li class="">
+              <%= link_to new_user_session_path, class:"btn btn-link" do %>
+              <i class="bi bi-box-arrow-in-right">Log in</i>
+              <% end %>
             </li>
             
             <% end %>
