@@ -25,38 +25,46 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             
-            <li class="nav-item">
-              <%= link_to 'Home', user_path(current_user.id), class: 'nav-link text-dark' %>
+            <li class="">
+              <%= link_to user_path(current_user.id), class: 'nav-link text-white' do %>
+              <i class="bi bi-house-fill"> Home</i>
+              <% end %>
             </li>
-            <li class="nav-item">
-              <%= link_to 'Users', new_book_path, class: 'nav-link text-dark' %>
+            <li class="">
+              <%= link_to  new_book_path, class: 'nav-link text-white' do %>
+              <i class="bi bi-people-fill"> Users</i>
+              <% end %>
             </li>
             
-            <li class="nav-item">
-              <%= link_to 'Books', user_path(current_user.id), class: 'nav-link text-dark' %>
+            <li class="">
+              <%= link_to  user_path(current_user.id), class: 'nav-link text-white' do %>
+              <i class="bi bi-book-fill"> Books</i>
+              <% end %>
             </li>
-            <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path,  method: :delete,class: 'nav-link text-dark' %>
+            <li class="">
+              <%= link_to  destroy_user_session_path,  method: :delete,class: 'nav-link text-white' do %>
+              <i class="bi bi-box-arrow-right"> Log out</i>
+              <% end %>
             </li>
             <% else %>
             <li class="">
-              <%= link_to root_path, class:"btn btn-link" do %>
-              <i class="bi bi-house-fill">Home</i>
+              <%= link_to root_path, class: 'nav-link text-white' do %>
+              <i class="bi bi-house-fill"> Home</i>
               <% end %>
             </li>
             <li class="">
-              <%= link_to home_about_path, class:"btn btn-link" do %>
-              <i class="bi bi-link-45deg">About</i>
+              <%= link_to home_about_path, class: 'nav-link text-white' do %>
+              <i class="bi bi-link-45deg"> About</i>
               <% end %>
             </li>
             <li class="">
-              <%= link_to new_user_registration_path, class:"btn btn-link" do %>
-              <i class="bi bi-person-plus">Sign up</i>
+              <%= link_to new_user_registration_path, class: 'nav-link text-white' do %>
+              <i class="bi bi-person-plus"> Sign up</i>
               <% end %>
             </li>
             <li class="">
-              <%= link_to new_user_session_path, class:"btn btn-link" do %>
-              <i class="bi bi-box-arrow-in-right">Log in</i>
+              <%= link_to new_user_session_path, class: 'nav-link text-white' do %>
+              <i class="bi bi-box-arrow-in-right"> Log in</i>
               <% end %>
             </li>
             
@@ -67,5 +75,8 @@
       </nav>
     </header>
   <%= yield %>
+  <footer>
+    <p class="text-centar"> CopyRight Infratop.inc</p>
+  </footer>
  </body>
 </html>
